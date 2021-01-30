@@ -6,7 +6,7 @@ services:
     hostname: k0s
     privileged: true
     volumes:
-      - "/var/lib/k0s"
+      - ./var/lib/k8s:/var/lib/k0s
     ports:
       - "6443:6443"
     network_mode: "bridge"
