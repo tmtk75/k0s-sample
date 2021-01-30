@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  k0s:
+    container_name: k0s
+    image: docker.pkg.github.com/k0sproject/k0s/k0s:v0.9.1
+    hostname: k0s
+    privileged: true
+    volumes:
+      - "/var/lib/k0s"
+    ports:
+      - "6443:6443"
+    network_mode: "bridge"
