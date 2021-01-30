@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: sample-hello-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  concurrencyPolicy: Allow  # Forbid, Replace
+  startingDeadlineSeconds: 30
+  successfulJobsHistoryLimit: 5
+  failedJobsHistoryLimit: 3
+  suspend: false
+  jobTemplate:
+    spec:
+      completions: 1
+      parallelism: 1
+      backoffLimit: 10
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 30']
+          restartPolicy: Never
