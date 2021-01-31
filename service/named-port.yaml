@@ -9,7 +9,7 @@ spec:
   - name: nginx-container
     image: amsy810/echo-nginx:v2.0
     ports:
-    - name: http2
+    - name: http
       containerPort: 80
 
 ---
@@ -24,7 +24,6 @@ spec:
   - name: nginx-container
     image: amsy810/echo-nginx:v2.0
     env:
-    ports:
     - name: NGINX_PORT
       value: "81"
     ports:
