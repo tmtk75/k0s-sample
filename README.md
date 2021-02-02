@@ -8,6 +8,8 @@ This repository provides some samples for k8s manifets.
 
 <img src="./from-kubeconfig.png" width="33%">
 
+TBD
+
 ```
 master:k0s-sample$ kubectl get all
 NAME             READY   STATUS    RESTARTS   AGE
@@ -24,3 +26,5 @@ service/localstack   ClusterIP   10.96.10.1   <none>        4566/TCP   5m15s
 $ docker-compose up -d
 ...
 ```
+
+TBD
